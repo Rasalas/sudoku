@@ -38,6 +38,33 @@ class Board:
     def write(self, content, x, y):
         self.cells[y][x] = content
 
+    def is_in_col(self,x,number):
+        for y in range(self.rows):
+            if(self.cells[x][y] == number):
+                return True
+        return False
+
+    def is_in_row(self,y,number):
+        for x in range(self.cols):
+            if(self.cells[x][y] == number):
+                return True
+        return False
+
+    def is_in_box(self,x,y,number):
+        for i in range(3):
+            for j in range(3):
+                if(self.cells[x-x%3+i][y-y%3+j] == number):
+                    return True
+            return False
+
+    def is_legal(self, x, y, number):
+        return not self.is_in_col(x, number) and not self.is_in_row(y, number) and not self.is_in_box(x, y, number)
+
+    def solve(self):
+        return 0
+
+    
+
 example = [
     [0,2,4,  0,6,0,  0,0,1],
     [0,0,0,  0,0,0,  0,7,9],
@@ -51,11 +78,13 @@ example = [
     [1,0,0,  0,9,0,  8,5,0],
     [6,9,0,  0,0,0,  0,0,0],
 ]
+
 b = Board(example)
 
-b.write('-', 3, 5)
+
 
 b.printBoard()
-
+print(b.is_legal(0,1,5))
+print(b.is_legal(0,1,6))
 
 
