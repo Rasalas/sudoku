@@ -6,7 +6,7 @@ This Python program is going to be able to create entirely new Sudokus and solve
 To test it, you have to import the `python.py` file first. 
 If you are in the same folder, just write:
 ```python
-import Sudoku
+import sudoku
 ```
 
 Now you can use this unsolved example Sudoku:
