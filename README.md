@@ -24,7 +24,7 @@ Now you can use this unsolved example Sudoku:
 		[0,0,0,  4,7,0,  6,9,0],
 		[1,0,0,  0,9,0,  8,5,0],
 		[6,9,0,  0,0,0,  0,0,0],
-	]
+	      ]
 ```
 Create a board:
 ```python
